@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Schedule</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Booking Schedule</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="schedule.html" class="active">Schedule</a>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+    <main class="schedule-container">
+        <h2>Booking Schedule</h2>
+        
+        <!-- Legend for the booked days moved to the top -->
+        <div class="legend">
+            <span class="legend-item">
+                <span class="dot booked"></span> Already Booked
+            </span>
+        </div>
+
+        <div class="calendar" id="calendar"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 SoundShots</p>
+    </footer>
+
+    <script>
+        // JavaScript code to create the calendar
+        const calendarElement = document.getElementById("calendar");
+        const today = new Date();
+        const year = today.getFullYear();
+        const bookedDates = getRandomDates(40); // Number of booked dates
+
+        function createCalendar() {
+            const months = [
+                "January", "February", "March", "April", "May", "June", 
+                "July", "August", "September", "October", "November", "December"
+            ];
+            for (let month = 0; month < 12; month++) {
+                // Create month header
+                const monthHeader = document.createElement("h3");
+                monthHeader.textContent = months[month];
+                monthHeader.classList.add("month-header");
+                calendarElement.appendChild(monthHeader);
+
+                // Create row for days
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                const dayRow = document.createElement("div");
+                dayRow.classList.add("day-row"); // Add class for styling
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayElement = document.createElement("span");
+                    dayElement.classList.add("day");
+                    dayElement.textContent = day;
+
+                    // Check if the date is booked
+                    const dateString = `${year}-${month + 1}-${day}`;
+                    if (bookedDates.includes(dateString)) {
+                        dayElement.classList.add("booked");
+                    }
+
+                    dayRow.appendChild(dayElement); // Append each day to the row
+                }
+                
+                calendarElement.appendChild(dayRow); // Append the row of days to the calendar
+            }
+        }
+
+        function getRandomDates(numBooked) {
+            const randomDates = new Set();
+            const totalDays = 365;
+
+            while (randomDates.size < numBooked) {
+                const randomDay = Math.floor(Math.random() * totalDays);
+                const date = new Date(year, 0, 1);
+                date.setDate(randomDay + 1);
+                const dateString = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+                randomDates.add(dateString);
+            }
+
+            return Array.from(randomDates);
+        }
+
+        createCalendar(); // Call the function to create the calendar
+    </script>
+</body>
+</html>
