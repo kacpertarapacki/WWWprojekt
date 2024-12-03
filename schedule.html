@@ -25,7 +25,6 @@
     <main class="schedule-container">
         <h2>Booking Schedule</h2>
         
-        <!-- Legend for the booked days moved to the top -->
         <div class="legend">
             <span class="legend-item">
                 <span class="dot booked"></span> Already Booked
@@ -39,11 +38,10 @@
     </footer>
 
     <script>
-        // JavaScript code to create the calendar
         const calendarElement = document.getElementById("calendar");
         const today = new Date();
         const year = today.getFullYear();
-        const bookedDates = getRandomDates(40); // Number of booked dates
+        const bookedDates = getRandomDates(40);
 
         function createCalendar() {
             const months = [
@@ -51,32 +49,29 @@
                 "July", "August", "September", "October", "November", "December"
             ];
             for (let month = 0; month < 12; month++) {
-                // Create month header
                 const monthHeader = document.createElement("h3");
                 monthHeader.textContent = months[month];
                 monthHeader.classList.add("month-header");
                 calendarElement.appendChild(monthHeader);
 
-                // Create row for days
                 const daysInMonth = new Date(year, month + 1, 0).getDate();
                 const dayRow = document.createElement("div");
-                dayRow.classList.add("day-row"); // Add class for styling
+                dayRow.classList.add("day-row");
 
                 for (let day = 1; day <= daysInMonth; day++) {
                     const dayElement = document.createElement("span");
                     dayElement.classList.add("day");
                     dayElement.textContent = day;
 
-                    // Check if the date is booked
                     const dateString = `${year}-${month + 1}-${day}`;
                     if (bookedDates.includes(dateString)) {
                         dayElement.classList.add("booked");
                     }
 
-                    dayRow.appendChild(dayElement); // Append each day to the row
+                    dayRow.appendChild(dayElement);
                 }
                 
-                calendarElement.appendChild(dayRow); // Append the row of days to the calendar
+                calendarElement.appendChild(dayRow);
             }
         }
 
@@ -95,7 +90,7 @@
             return Array.from(randomDates);
         }
 
-        createCalendar(); // Call the function to create the calendar
+        createCalendar();
     </script>
 </body>
 </html>
