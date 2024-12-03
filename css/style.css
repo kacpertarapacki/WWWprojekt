@@ -1,4 +1,3 @@
-/* Podstawowe style */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -39,25 +38,24 @@ nav ul li a {
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the main content and sidebar */
+    justify-content: center;
     margin: 20px;
 }
 
-/* Center the logo container */
 .logo-container {
-    text-align: center; /* Center the logo */
-    margin: 20px 0; /* Margin above and below the logo */
+    text-align: center;
+    margin: 20px 0;
 }
 
 .logo-container img {
-    max-width: 100%; /* Ensure the logo is responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 main {
     flex: 3;
     padding: 15px;
-    text-align: center; /* Center text within main */
+    text-align: center;
 }
 
 aside {
@@ -66,19 +64,17 @@ aside {
     background: #f4f4f4;
 }
 
-/* Styl dla zdjęć w sidebarze */
 .sidebar-images {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Odstęp między zdjęciami */
+    gap: 10px;
 }
 
 .sidebar-images img {
-    width: 100%; /* Dopasowanie szerokości zdjęcia do sidebaru */
-    border-radius: 5px; /* Zaokrąglone rogi */
+    width: 100%;
+    border-radius: 5px;
 }
 
-/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -92,7 +88,6 @@ table td {
     text-align: left;
 }
 
-/* Stopka */
 footer {
     background: #333;
     color: #fff;
@@ -101,13 +96,11 @@ footer {
     margin-top: 20px;
 }
 
-/* Obrazy */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Responsywność */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -132,7 +125,6 @@ img {
     }
 }
 
-/* Stylizacja galerii */
 .gallery-container {
     padding: 20px;
     text-align: center;
@@ -144,38 +136,36 @@ img {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trzy kolumny */
-    gap: 15px; /* Odstęp między zdjęciami */
-    justify-items: center; /* Wyśrodkowanie zdjęć w siatce */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
 }
 
 .gallery-grid img {
-    width: 100%; /* Zdjęcia zajmują pełną szerokość swojej kolumny */
-    max-width: 300px; /* Maksymalna szerokość zdjęcia */
-    border-radius: 5px; /* Zaokrąglone rogi */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lekki cień */
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.05); /* Powiększenie zdjęcia przy najechaniu */
+    transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsywność dla galerii */
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* Dwie kolumny na węższych ekranach */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
     .gallery-grid {
-        grid-template-columns: 1fr; /* Jedna kolumna na najmniejszych ekranach */
+        grid-template-columns: 1fr;
     }
 }
 
-/* Stylizacja sekcji usług */
 .services-container {
     padding: 20px;
     text-align: center;
@@ -187,21 +177,21 @@ img {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trzy kolumny */
-    gap: 20px; /* Odstęp między elementami */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .service-item {
     background: #f4f4f4;
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lekki cień */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-item:hover {
-    transform: scale(1.05); /* Powiększenie przy najechaniu */
+    transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -214,20 +204,18 @@ img {
     color: #555;
 }
 
-/* Responsywność dla sekcji usług */
 @media (max-width: 768px) {
     .services-grid {
-        grid-template-columns: repeat(2, 1fr); /* Dwie kolumny na węższych ekranach */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
     .services-grid {
-        grid-template-columns: 1fr; /* Jedna kolumna na najmniejszych ekranach */
+        grid-template-columns: 1fr;
     }
 }
 
-/* Stylizacja sekcji kontaktowej */
 .contact-container {
     padding: 20px;
     text-align: center;
@@ -243,96 +231,88 @@ img {
 }
 
 .contact-container ul {
-    list-style-type: none; /* Usunięcie punktów z listy */
-    padding: 0; /* Usunięcie paddingu */
+    list-style-type: none;
+    padding: 0;
 }
 
 .contact-container ul li {
-    margin: 5px 0; /* Odstęp między elementami listy */
+    margin: 5px 0;
 }
 
-/* Month header styles */
 .month-header {
-    text-align: center; /* Center month names */
-    background: #eaeaea; /* Light background for month header */
+    text-align: center;
+    background: #eaeaea;
     border-radius: 5px;
-    height: 40px; /* Set a fixed height */
-    line-height: 40px; /* Center text vertically */
-    margin: 20px 0; /* Space above and below */
-    font-size: 1.5em; /* Larger font size for month names */
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+    font-size: 1.5em;
 }
 
-/* Month container styles */
 .month-container {
-    display: block; /* Each month container is a block */
-    margin-bottom: 20px; /* Space below each month */
+    display: block;
+    margin-bottom: 20px;
 }
 
-/* Day row styles */
 .day-row {
-    display: flex; /* Use flex to arrange days in a row */
-    justify-content: center; /* Center days horizontally */
-    flex-wrap: wrap; /* Allow wrapping of days if needed */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Day styles */
 .day {
-    width: 40px; /* Set a width for the days */
-    height: 40px; /* Set a height for the days */
-    margin: 2px; /* Space between days */
-    text-align: center; /* Center text in day boxes */
-    border: 1px solid #ddd; /* Border for days */
-    position: relative; /* Position for dots */
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    text-align: center;
+    border: 1px solid #ddd;
+    position: relative;
 }
 
-/* Booked day styles */
 .booked {
-    background: #ffcccc; /* Light red background for booked days */
+    background: #ffcccc;
 }
 
-/* Centering the schedule container */
 .schedule-container {
-    text-align: center; /* Center text in the container */
-    margin: 20px auto; /* Add top and bottom margin */
+    text-align: center;
+    margin: 20px auto;
 }
 
-/* Legend styles */
 .legend {
-    margin-top: 20px; /* Space above the legend */
-    font-size: 1em; /* Font size for the legend */
+    margin-top: 20px;
+    font-size: 1em;
 }
 
 .legend-item {
-    display: inline-block; /* Display items inline */
-    margin-right: 10px; /* Space between legend items */
+    display: inline-block;
+    margin-right: 10px;
 }
 
-/* Dot for booked days in the legend */
 .dot {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #ffcccc; /* Color for booked days */
-    border-radius: 50%; /* Rounded dot */
-    margin-right: 5px; /* Space to the right of the dot */
+    background-color: #ffcccc;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 .faq-container {
     padding: 20px;
-    text-align: left; /* Align text to the left for better readability */
+    text-align: left;
 }
 
 .faq-item {
-    margin-bottom: 15px; /* Spacing between FAQ items */
-    border-bottom: 1px solid #ddd; /* Light border for separation */
-    padding-bottom: 10px; /* Padding below each item */
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
 }
 
 .faq-item h3 {
-    cursor: pointer; /* Pointer cursor to indicate interactivity */
-    color: #333; /* Darker color for questions */
+    cursor: pointer;
+    color: #333;
 }
 
 .faq-item p {
-    color: #555; /* Color for answers */
+    color: #555;
 }
